@@ -21,6 +21,8 @@ git status
 
 # Agregar archivo
 git add main.py
+git add comandos.txt
+git add requirements.txt
 
 # Confirmar cambios
 git commit -m "backup"
