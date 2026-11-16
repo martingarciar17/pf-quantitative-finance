@@ -6,15 +6,13 @@ import yfinance as yf
 tickers = ['IVV', 'ILF', 'SOXX'] # SP500, LATAM, Semiconductores (IA)
 vector_w = [0.5, 0.3, 0.2]
 vector_w = np.array(vector_w).reshape(-1,1)
-df_prices = yf.download(tickers, start='2024-01-01', end='2026-10-01', progress=False)['Close']
-df_prices = df_prices[tickers]
+df_prices = yf.download(tickers, start='2024-01-01', end='2026-09-30', progress=False)['Close']
 
 # calcular retornos diarios
 df_ret = df_prices.pct_change().dropna()
 
 # calular matriz varianza convarianza
 df_cov = df_ret.cov()
-# print(df_cov)
 
 # calcular varianza del portafolio
 w = vector_w
